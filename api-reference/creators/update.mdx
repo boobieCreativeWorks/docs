@@ -1,0 +1,18 @@
+---
+title: Update Creator
+description: Update a creator profile and metadata.
+---
+
+## PATCH /v1/creators/:id
+
+All parameters are optional. Include only the fields you want to update.
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `name` | string | Creator full name |
+| `vertical` | string | Primary creative vertical |
+| `metadata` | object | Additional metadata |
+
+### Response
+
+Returns the updated creator object.

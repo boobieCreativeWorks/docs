@@ -1,0 +1,50 @@
+---
+title: Run Workflow
+description: Execute an intelligent workflow on the B.O.O.B.I.E.™ engine.
+---
+
+## POST /v1/engine/run
+
+### Body Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `vertical` | string | ✓ | The creative vertical |
+| `workflow` | string | ✓ | The workflow to execute |
+| `context` | object | ✓ | Contextual data for the workflow |
+| `async` | boolean | | Run asynchronously. Default: false |
+
+### Example Request
+
+```bash
+curl -X POST https://api.boobie.ai/v1/engine/run \
+  -H "Authorization: Bearer YOUR_BOOBIE_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "vertical": "music",
+    "workflow": "release-strategy",
+    "context": {
+      "artist": "Artist Name",
+      "genre": "R&B",
+      "releaseDate": "2026-08-01"
+    }
+  }'
+```
+
+### Response
+
+```json
+{
+  "id": "job_abc123",
+  "status": "completed",
+  "vertical": "music",
+  "workflow": "release-strategy",
+  "result": {
+    "strategy": "Full AI-generated strategy...",
+    "recommendations": [],
+    "timeline": {}
+  },
+  "created_at": "2026-06-12T09:00:00Z",
+  "completed_at": "2026-06-12T09:00:02Z"
+}
+```

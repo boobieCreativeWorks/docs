@@ -1,0 +1,22 @@
+---
+title: Error Reference
+description: Complete reference of boobie.ai API error codes.
+---
+
+## Error Response Format
+
+All errors return a consistent JSON structure with a code, message, and docs link.
+
+## Error Codes
+
+| Code | HTTP Status | Description |
+|------|-------------|-------------|
+| `INVALID_API_KEY` | 401 | API key is missing or invalid |
+| `INSUFFICIENT_SCOPE` | 403 | API key lacks required scope |
+| `INVALID_VERTICAL` | 400 | Vertical not supported |
+| `INVALID_WORKFLOW` | 400 | Workflow not found for vertical |
+| `CONTEXT_ERROR` | 400 | Required context fields missing |
+| `CREATOR_NOT_FOUND` | 404 | Creator ID does not exist |
+| `IP_NOT_FOUND` | 404 | IP asset not found |
+| `RATE_LIMITED` | 429 | Rate limit exceeded |
+| `INTERNAL_ERROR` | 500 | Internal server error |

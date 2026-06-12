@@ -1,0 +1,18 @@
+---
+title: Verify IP
+description: Verify ownership and registration status of intellectual property.
+---
+
+## GET /v1/ip/verify/:id
+
+### Response
+
+```json
+{
+  "id": "ip_abc123",
+  "verified": true,
+  "creator_id": "cr_abc123",
+  "timestamp": "2026-06-12T09:00:00Z",
+  "certificate_id": "cert_xyz789"
+}
+```

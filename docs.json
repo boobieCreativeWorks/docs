@@ -1,72 +1,71 @@
 {
-  "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "Mintlify Starter Kit",
-  "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "boobie.ai Developer Docs",
+  "logo": {
+    "light": "/logo/boobie-logo-white.png",
+    "dark": "/logo/boobie-logo-white.png"
   },
   "favicon": "/favicon.svg",
-  "navigation": {
-    "pages": [
-      {
-        "group": "Getting Started",
-        "pages": [
-          "index",
-          "quickstart"
-        ]
-      }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
+  "colors": {
+    "primary": "#7B3FA8",
+    "light": "#C084FC",
+    "dark": "#532978",
+    "background": {
+      "dark": "#0A0614"
     }
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
   },
   "navbar": {
     "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
+      { "label": "boobie.ai", "href": "https://boobie.ai" },
+      { "label": "Support", "href": "mailto:boobie@boobie.ai" }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://app.mintlify.com"
+      "label": "Get API Access",
+      "href": "https://boobie.ai/enterprise"
     }
   },
-  "contextual": {
-    "options": [
-      "copy",
-      "view",
-      "chatgpt",
-      "claude",
-      "perplexity",
-      "mcp",
-      "cursor",
-      "vscode"
+  "sidebar": {
+    "items": [
+      {
+        "group": "Getting Started",
+        "pages": ["introduction", "quickstart", "authentication"]
+      },
+      {
+        "group": "B.O.O.B.I.E.™ Engine API",
+        "pages": ["api-reference/overview", "api-reference/engine/run", "api-reference/engine/workflows", "api-reference/engine/status"]
+      },
+      {
+        "group": "Creators",
+        "pages": ["api-reference/creators/create", "api-reference/creators/get", "api-reference/creators/update"]
+      },
+      {
+        "group": "IP Management",
+        "pages": ["api-reference/ip/register", "api-reference/ip/catalog", "api-reference/ip/verify"]
+      },
+      {
+        "group": "Webhooks",
+        "pages": ["api-reference/webhooks/overview", "api-reference/webhooks/create", "api-reference/webhooks/delete", "api-reference/webhooks/events"]
+      },
+      {
+        "group": "Analytics",
+        "pages": ["api-reference/analytics/usage", "api-reference/analytics/performance"]
+      },
+      {
+        "group": "SDKs",
+        "pages": ["sdks/javascript", "sdks/python", "sdks/typescript"]
+      },
+      {
+        "group": "Resources",
+        "pages": ["resources/rate-limits", "resources/errors", "resources/changelog", "resources/support"]
+      }
     ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/boobieai",
+      "linkedin": "https://linkedin.com/company/boobie-ai",
+      "github": "https://github.com/boobieCreativeWorks"
     }
   }
 }

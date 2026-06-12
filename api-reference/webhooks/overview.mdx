@@ -1,0 +1,47 @@
+---
+title: Webhooks Overview
+description: Receive real-time event notifications from the B.O.O.B.I.E.™ engine.
+---
+
+## Overview
+
+Webhooks deliver real-time event notifications to your HTTPS endpoint when events occur in the boobie.ai platform.
+
+## Payload Structure
+
+```json
+{
+  "id": "evt_abc123",
+  "type": "engine.job.completed",
+  "data": {},
+  "created_at": "2026-06-12T09:00:00Z"
+}
+```
+
+## Available Events
+
+| Event | Description |
+|-------|-------------|
+| `engine.job.completed` | A workflow job completed successfully |
+| `engine.job.failed` | A workflow job failed |
+| `creator.created` | A new creator was provisioned |
+| `ip.registered` | New IP was registered |
+| `ip.verified` | IP verification completed |
+
+## Retry Logic
+
+On non-2xx responses, boobie.ai retries with exponential backoff: 1m, 5m, 30m, 2h, then stops.
+
+## Verifying Signatures
+
+```javascript
+const crypto = require('crypto');
+
+function verifyWebhook(payload, signature, secret) {
+  const expected = crypto
+    .createHmac('sha256', secret)
+    .update(payload)
+    .digest('hex');
+  return `sha256=${expected}` === signature;
+}
+```

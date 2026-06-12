@@ -1,0 +1,46 @@
+---
+title: JavaScript SDK
+description: Official boobie.ai JavaScript SDK for Node.js and browser environments.
+---
+
+## Installation
+
+```bash
+npm install @boobie-ai/sdk
+```
+
+## Initialization
+
+```javascript
+import Boobie from '@boobie-ai/sdk';
+
+const client = new Boobie({
+  apiKey: process.env.BOOBIE_API_KEY,
+});
+```
+
+## Usage
+
+```javascript
+// Run a workflow
+const result = await client.engine.run({
+  vertical: 'music',
+  workflow: 'release-strategy',
+  context: { artist: 'Name', genre: 'R&B' },
+});
+
+// Create a creator
+const creator = await client.creators.create({
+  name: 'Creator Name',
+  email: 'creator@example.com',
+  vertical: 'music',
+});
+
+// Register IP
+const ip = await client.ip.register({
+  creator_id: creator.id,
+  title: 'Song Title',
+  type: 'song',
+  content_hash: 'sha256:...',
+});
+```

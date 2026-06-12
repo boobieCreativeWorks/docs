@@ -1,0 +1,44 @@
+---
+title: Register IP
+description: Timestamp and register intellectual property with cryptographic proof of origination.
+---
+
+## POST /v1/ip/register
+
+### Body Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `creator_id` | string | ✓ | ID of the creator who owns this IP |
+| `title` | string | ✓ | Title of the work |
+| `type` | string | ✓ | Type: song, script, book, artwork, concept, other |
+| `content_hash` | string | ✓ | SHA-256 hash of the content |
+| `description` | string | | Description of the work |
+
+### Example Request
+
+```bash
+curl -X POST https://api.boobie.ai/v1/ip/register \
+  -H "Authorization: Bearer YOUR_BOOBIE_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "creator_id": "cr_abc123",
+    "title": "Song Title",
+    "type": "song",
+    "content_hash": "sha256:abc123..."
+  }'
+```
+
+### Response
+
+```json
+{
+  "id": "ip_abc123",
+  "creator_id": "cr_abc123",
+  "title": "Song Title",
+  "type": "song",
+  "timestamp": "2026-06-12T09:00:00Z",
+  "certificate_id": "cert_xyz789",
+  "status": "registered"
+}
+```

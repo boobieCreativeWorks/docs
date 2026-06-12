@@ -1,0 +1,36 @@
+---
+title: Usage Analytics
+description: Retrieve API usage metrics for your account.
+---
+
+## GET /v1/analytics/usage
+
+### Query Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `start_date` | string | Start date (ISO 8601) |
+| `end_date` | string | End date (ISO 8601) |
+| `vertical` | string | Filter by vertical |
+
+### Response
+
+```json
+{
+  "period": {
+    "start": "2026-06-01T00:00:00Z",
+    "end": "2026-06-12T00:00:00Z"
+  },
+  "totals": {
+    "requests": 1420,
+    "tokens_used": 2840000,
+    "jobs_completed": 1398,
+    "jobs_failed": 22
+  },
+  "by_vertical": {
+    "music": 540,
+    "film": 320,
+    "sports": 280
+  }
+}
+```

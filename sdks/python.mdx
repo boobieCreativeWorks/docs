@@ -1,0 +1,44 @@
+---
+title: Python SDK
+description: Official boobie.ai Python SDK. Requires Python 3.8+.
+---
+
+## Installation
+
+```bash
+pip install boobie-ai
+```
+
+## Initialization
+
+```python
+import boobie_ai
+
+client = boobie_ai.Boobie(api_key="YOUR_BOOBIE_API_KEY")
+```
+
+## Usage
+
+```python
+# Run a workflow
+result = client.engine.run(
+    vertical="music",
+    workflow="release-strategy",
+    context={"artist": "Name", "genre": "R&B"}
+)
+
+# Create a creator
+creator = client.creators.create(
+    name="Creator Name",
+    email="creator@example.com",
+    vertical="music"
+)
+
+# Register IP
+ip = client.ip.register(
+    creator_id=creator.id,
+    title="Song Title",
+    type="song",
+    content_hash="sha256:..."
+)
+```

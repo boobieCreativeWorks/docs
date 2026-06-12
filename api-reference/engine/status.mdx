@@ -1,0 +1,41 @@
+---
+title: Get Job Status
+description: Check the status of an asynchronous workflow job.
+---
+
+## GET /v1/engine/status/:jobId
+
+### Path Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `jobId` | string | ✓ | The job ID returned from /v1/engine/run |
+
+### Example Request
+
+```bash
+curl https://api.boobie.ai/v1/engine/status/job_abc123 \
+  -H "Authorization: Bearer YOUR_BOOBIE_API_KEY"
+```
+
+### Response
+
+```json
+{
+  "id": "job_abc123",
+  "status": "completed",
+  "progress": 100,
+  "result": {},
+  "created_at": "2026-06-12T09:00:00Z",
+  "completed_at": "2026-06-12T09:00:02Z"
+}
+```
+
+### Job Status Values
+
+| Status | Description |
+|--------|-------------|
+| `queued` | Job is waiting to be processed |
+| `processing` | Job is currently running |
+| `completed` | Job finished successfully |
+| `failed` | Job encountered an error |

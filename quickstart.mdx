@@ -1,47 +1,55 @@
 ---
-title: "Quickstart"
-description: "Begin with a guide on the fastest path to a successful outcome"
+title: Quickstart
+description: Make your first API call to the B.O.O.B.I.E.™ engine in under 5 minutes.
 ---
 
-Describe how someone begins using your product. What is the first thing they need to do? Are there any prerequisites?
+## 1. Get Your API Key
 
-A quickstart should take someone from zero to using your product. They'll get a quick win and a sense of what they can accomplish.
+Contact the boobie.ai enterprise team to request API access:
+- Email: boobie@boobie.ai
+- Or visit: https://boobie.ai/enterprise
 
-## Prerequisites
+## 2. Install the SDK
 
-Before you begin, you must have:
+```bash
+npm install @boobie-ai/sdk
+```
 
-- Requirement one (for example, Node.js 18+, a free account, an API key)
-- Requirement two (for example, a compatible device, a compatible browser, a compatible operating system)
+## 3. Make Your First Request
 
-## Get started
+```javascript
+import Boobie from '@boobie-ai/sdk';
 
-<Steps>
-  <Step title="Install">
-    Describe how to install your product or sign up.
+const client = new Boobie({
+  apiKey: process.env.BOOBIE_API_KEY,
+});
 
-    ```bash
-    npm install your-package
-    ```
-  </Step>
-  <Step title="Configure">
-    Describe any setup or configuration needed before first use.
+const response = await client.engine.run({
+  vertical: 'music',
+  workflow: 'release-strategy',
+  context: {
+    artist: 'Your Artist Name',
+    genre: 'R&B',
+    releaseDate: '2026-08-01',
+  },
+});
 
-    ```bash
-    your-cli init
-    ```
-  </Step>
-  <Step title="Run it">
-    Show the first thing a user does to see it working.
+console.log(response.strategy);
+```
 
-    ```bash
-    your-cli start
-    ```
-  </Step>
-</Steps>
+## 4. Handle the Response
 
-<Tip>
-  Give people a way to get help. This could be a link to a support page, a chat with a customer support agent, or a forum for your product.
-
-  Example: Need help? Reach out to us at [support@yourcompany.com](mailto:support@yourcompany.com).
-</Tip>
+```json
+{
+  "id": "job_abc123",
+  "status": "completed",
+  "vertical": "music",
+  "workflow": "release-strategy",
+  "result": {
+    "strategy": "...",
+    "recommendations": [],
+    "timeline": {}
+  },
+  "created_at": "2026-06-12T09:00:00Z"
+}
+```

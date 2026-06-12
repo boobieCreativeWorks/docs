@@ -1,0 +1,20 @@
+---
+title: Rate Limits
+description: API rate limits and how to handle them.
+---
+
+## Rate Limits
+
+| Plan | Requests/minute | Requests/day |
+|------|----------------|--------------|
+| Developer | 60 | 10,000 |
+| Studio | 300 | 100,000 |
+| Enterprise | Custom | Unlimited |
+
+## Rate Limit Headers
+
+X-RateLimit-Limit, X-RateLimit-Remaining, and X-RateLimit-Reset are included in every response.
+
+## Handling 429 Errors
+
+When rate limited implement exponential backoff — wait 1s, then 2s, then 4s before retrying.

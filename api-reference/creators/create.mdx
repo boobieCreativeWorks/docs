@@ -1,0 +1,41 @@
+---
+title: Create Creator
+description: Provision a new creator account on the boobie.ai platform.
+---
+
+## POST /v1/creators
+
+### Body Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `name` | string | ✓ | Creator full name |
+| `email` | string | ✓ | Creator email address |
+| `vertical` | string | ✓ | Primary creative vertical |
+| `metadata` | object | | Additional metadata |
+
+### Example Request
+
+```bash
+curl -X POST https://api.boobie.ai/v1/creators \
+  -H "Authorization: Bearer YOUR_BOOBIE_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Creator Name",
+    "email": "creator@example.com",
+    "vertical": "music"
+  }'
+```
+
+### Response
+
+```json
+{
+  "id": "cr_abc123",
+  "name": "Creator Name",
+  "email": "creator@example.com",
+  "vertical": "music",
+  "status": "active",
+  "created_at": "2026-06-12T09:00:00Z"
+}
+```

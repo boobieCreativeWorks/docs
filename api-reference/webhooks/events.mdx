@@ -1,0 +1,51 @@
+---
+title: Webhook Events
+description: Full reference of all webhook event types and payloads.
+---
+
+## engine.job.completed
+
+```json
+{
+  "id": "evt_abc123",
+  "type": "engine.job.completed",
+  "data": {
+    "job_id": "job_abc123",
+    "vertical": "music",
+    "workflow": "release-strategy",
+    "result": {}
+  },
+  "created_at": "2026-06-12T09:00:00Z"
+}
+```
+
+## engine.job.failed
+
+```json
+{
+  "id": "evt_abc124",
+  "type": "engine.job.failed",
+  "data": {
+    "job_id": "job_abc124",
+    "error": "Insufficient context provided",
+    "code": "CONTEXT_ERROR"
+  },
+  "created_at": "2026-06-12T09:00:01Z"
+}
+```
+
+## ip.registered
+
+```json
+{
+  "id": "evt_abc125",
+  "type": "ip.registered",
+  "data": {
+    "ip_id": "ip_abc123",
+    "creator_id": "cr_abc123",
+    "title": "Song Title",
+    "certificate_id": "cert_xyz789"
+  },
+  "created_at": "2026-06-12T09:00:02Z"
+}
+```

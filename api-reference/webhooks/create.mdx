@@ -1,0 +1,39 @@
+---
+title: Create Webhook
+description: Register a webhook endpoint for event delivery.
+---
+
+## POST /v1/webhooks
+
+### Body Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `url` | string | ✓ | HTTPS endpoint URL |
+| `events` | array | ✓ | Event types to subscribe to |
+| `secret` | string | | Secret for signature verification |
+
+### Example Request
+
+```bash
+curl -X POST https://api.boobie.ai/v1/webhooks \
+  -H "Authorization: Bearer YOUR_BOOBIE_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "url": "https://yourapp.com/webhooks/boobie",
+    "events": ["engine.job.completed", "ip.registered"],
+    "secret": "your_webhook_secret"
+  }'
+```
+
+### Response
+
+```json
+{
+  "id": "wh_abc123",
+  "url": "https://yourapp.com/webhooks/boobie",
+  "events": ["engine.job.completed", "ip.registered"],
+  "status": "active",
+  "created_at": "2026-06-12T09:00:00Z"
+}
+```

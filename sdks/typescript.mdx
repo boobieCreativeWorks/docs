@@ -1,0 +1,30 @@
+---
+title: TypeScript SDK
+description: Full TypeScript support included with the JavaScript SDK.
+---
+
+## Installation
+
+```bash
+npm install @boobie-ai/sdk
+```
+
+Full TypeScript type definitions are included. No separate @types package needed.
+
+## Type Safety
+
+```typescript
+import Boobie, { EngineRunParams } from '@boobie-ai/sdk';
+
+const client = new Boobie({
+  apiKey: process.env.BOOBIE_API_KEY as string,
+});
+
+const params: EngineRunParams = {
+  vertical: 'music',
+  workflow: 'release-strategy',
+  context: { artist: 'Artist Name', genre: 'R&B' },
+};
+
+const result = await client.engine.run(params);
+```

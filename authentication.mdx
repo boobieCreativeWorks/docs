@@ -1,0 +1,40 @@
+---
+title: Authentication
+description: Secure your API requests with boobie.ai API key authentication.
+---
+
+## API Keys
+
+All requests must include a valid API key in the Authorization header:
+
+```bash
+Authorization: Bearer YOUR_BOOBIE_API_KEY
+```
+
+Never expose your API key in client-side code or public repositories.
+
+## Getting an API Key
+
+1. Visit https://boobie.ai/enterprise
+2. Complete the Enterprise Strategy Call request form
+3. Our team will provision your API key within 24 hours
+
+## API Key Scopes
+
+| Scope | Description |
+|-------|-------------|
+| `engine:run` | Execute workflows |
+| `engine:read` | Read workflow status |
+| `creators:write` | Create and update creators |
+| `creators:read` | Read creator profiles |
+| `ip:write` | Register intellectual property |
+| `ip:read` | Query IP catalog |
+| `webhooks:write` | Manage webhook endpoints |
+| `analytics:read` | Access usage metrics |
+
+## Security Best Practices
+
+- Store API keys as environment variables
+- Request only the scopes your application needs
+- Monitor usage regularly via the Analytics endpoint
+- All requests must be made over HTTPS

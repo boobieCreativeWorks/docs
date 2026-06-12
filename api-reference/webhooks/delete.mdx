@@ -1,0 +1,20 @@
+---
+title: Delete Webhook
+description: Remove a registered webhook endpoint.
+---
+
+## DELETE /v1/webhooks/:id
+
+```bash
+curl -X DELETE https://api.boobie.ai/v1/webhooks/wh_abc123 \
+  -H "Authorization: Bearer YOUR_BOOBIE_API_KEY"
+```
+
+### Response
+
+```json
+{
+  "id": "wh_abc123",
+  "deleted": true
+}
+```

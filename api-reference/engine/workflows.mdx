@@ -1,0 +1,41 @@
+---
+title: List Workflows
+description: Retrieve all available workflows for a given vertical.
+---
+
+## GET /v1/engine/workflows
+
+### Query Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `vertical` | string | | Filter by vertical key |
+
+### Example Request
+
+```bash
+curl https://api.boobie.ai/v1/engine/workflows?vertical=music \
+  -H "Authorization: Bearer YOUR_BOOBIE_API_KEY"
+```
+
+### Response
+
+```json
+{
+  "workflows": [
+    {
+      "id": "release-strategy",
+      "name": "Release Strategy",
+      "vertical": "music",
+      "description": "Full AI-generated release strategy including timeline, DSP submission, social campaign, and press outreach."
+    },
+    {
+      "id": "ar-analysis",
+      "name": "A&R Analysis",
+      "vertical": "music",
+      "description": "Artist development intelligence, market positioning, and label fit analysis."
+    }
+  ],
+  "total": 2
+}
+```

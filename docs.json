@@ -9,10 +9,7 @@
   "colors": {
     "primary": "#7B3FA8",
     "light": "#C084FC",
-    "dark": "#532978",
-    "background": {
-      "dark": "#0A0614"
-    }
+    "dark": "#532978"
   },
   "navbar": {
     "links": [
@@ -31,76 +28,6 @@
       "href": "https://boobie.ai/enterprise"
     }
   },
-  "sidebar": {
-    "items": [
-      {
-        "group": "Getting Started",
-        "pages": [
-          "introduction",
-          "quickstart",
-          "authentication"
-        ]
-      },
-      {
-        "group": "B.O.O.B.I.E.\u2122 Engine API",
-        "pages": [
-          "api-reference/overview",
-          "api-reference/engine/run",
-          "api-reference/engine/workflows",
-          "api-reference/engine/status"
-        ]
-      },
-      {
-        "group": "Creators",
-        "pages": [
-          "api-reference/creators/create",
-          "api-reference/creators/get",
-          "api-reference/creators/update"
-        ]
-      },
-      {
-        "group": "IP Management",
-        "pages": [
-          "api-reference/ip/register",
-          "api-reference/ip/catalog",
-          "api-reference/ip/verify"
-        ]
-      },
-      {
-        "group": "Webhooks",
-        "pages": [
-          "api-reference/webhooks/overview",
-          "api-reference/webhooks/create",
-          "api-reference/webhooks/delete",
-          "api-reference/webhooks/events"
-        ]
-      },
-      {
-        "group": "Analytics",
-        "pages": [
-          "api-reference/analytics/usage",
-          "api-reference/analytics/performance"
-        ]
-      },
-      {
-        "group": "SDKs",
-        "pages": [
-          "sdks/javascript",
-          "sdks/python",
-          "sdks/typescript"
-        ]
-      },
-      {
-        "group": "Resources",
-        "pages": [
-          "resources/rate-limits",
-          "resources/errors",
-          "resources/changelog",
-          "resources/support"
-        ]
-      }
-    ]
-  },
   "footer": {
     "socials": {
       "x": "https://x.com/boobieai",
@@ -108,5 +35,73 @@
       "github": "https://github.com/boobieCreativeWorks"
     }
   },
-  "theme": "linden"
+  "theme": "linden",
+  "navigation": [
+    {
+      "group": "Getting Started",
+      "pages": [
+        "introduction",
+        "quickstart",
+        "authentication"
+      ]
+    },
+    {
+      "group": "B.O.O.B.I.E.\u2122 Engine API",
+      "pages": [
+        "api-reference/overview",
+        "api-reference/engine/run",
+        "api-reference/engine/workflows",
+        "api-reference/engine/status"
+      ]
+    },
+    {
+      "group": "Creators",
+      "pages": [
+        "api-reference/creators/create",
+        "api-reference/creators/get",
+        "api-reference/creators/update"
+      ]
+    },
+    {
+      "group": "IP Management",
+      "pages": [
+        "api-reference/ip/register",
+        "api-reference/ip/catalog",
+        "api-reference/ip/verify"
+      ]
+    },
+    {
+      "group": "Webhooks",
+      "pages": [
+        "api-reference/webhooks/overview",
+        "api-reference/webhooks/create",
+        "api-reference/webhooks/delete",
+        "api-reference/webhooks/events"
+      ]
+    },
+    {
+      "group": "Analytics",
+      "pages": [
+        "api-reference/analytics/usage",
+        "api-reference/analytics/performance"
+      ]
+    },
+    {
+      "group": "SDKs",
+      "pages": [
+        "sdks/javascript",
+        "sdks/python",
+        "sdks/typescript"
+      ]
+    },
+    {
+      "group": "Resources",
+      "pages": [
+        "resources/rate-limits",
+        "resources/errors",
+        "resources/changelog",
+        "resources/support"
+      ]
+    }
+  ]
 }

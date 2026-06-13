@@ -3,7 +3,7 @@
   "name": "boobie.ai Developer Docs",
   "logo": {
     "light": "/logo/boobie-logo-dark.png",
-    "dark": "/logo/boobie-logo-white.png"
+    "dark": "/logo/boobie-logo-dark.png"
   },
   "favicon": "/favicon.svg",
   "colors": {

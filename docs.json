@@ -2,7 +2,7 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "boobie.ai Developer Docs",
   "logo": {
-    "light": "/logo/boobie-logo-white.png",
+    "light": "/logo/boobie-logo-dark.png",
     "dark": "/logo/boobie-logo-white.png"
   },
   "favicon": "/favicon.svg",
